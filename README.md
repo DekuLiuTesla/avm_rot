@@ -79,3 +79,4 @@ avm_cs_format
 ```bash
 python inference.py --config=configs/rotated_retinanet_obb_r50_fpn_1x_avm_le90.py --checkpoint=checkpoints/epoch_3.pth --image_path=demo.png
 ```
+结果将保存为bin文件，读取后reshape成(-1, 7)，则7个维度分别对应 (x, y, w, h, theta, score, label)。
