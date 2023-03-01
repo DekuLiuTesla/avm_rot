@@ -33,6 +33,10 @@ def save_data(avm_dir, output_dir):
     output_anno_path = os.path.join(output_dir, 'train', 'annfiles')
     avm_img_path = os.path.join(avm_dir, 'images')
     avm_det_anno_path = os.path.join(avm_dir, 'det_annotations')
+    if not os.path.exists(output_img_path):
+        os.makedirs(output_img_path)
+    if not os.path.exists(output_anno_path):
+        os.makedirs(output_anno_path)
     print('Saving Data ...')
 
     filename_list = os.listdir(avm_img_path)
@@ -53,7 +57,7 @@ def save_data(avm_dir, output_dir):
                     continue
                 else:
                     anno_name = target_anno_name
-            # TODO: Remove this part
+
             img_path = os.path.join(avm_img_file, img_name)
             anno_path = os.path.join(avm_det_anno_file, anno_name)
 

@@ -185,6 +185,8 @@ def inference_sample(args):
     bin_name = args.image_path.split('/')[-1].split('.')[0] + ".bin"
     out_img_file = os.path.join(args.save_dir, img_name)
     out_bin_file = os.path.join(args.save_dir, bin_name)
+    if not os.path.exists(args.save_dir):
+        os.makedirs(args.save_dir)
 
     bin_results = np.concatenate([bboxes, labels[:, None]], axis=-1)
     bin_results.tofile(out_bin_file)
@@ -205,7 +207,7 @@ if __name__ == '__main__':
     parser.add_argument("--checkpoint", type=str,
                         default="checkpoints/latest.pth")
     parser.add_argument("--image_path", type=str, default="demo.png")
-    parser.add_argument("--save_dir", type=str, default=".")
+    parser.add_argument("--save_dir", type=str, default="./results")
     parser.add_argument("--rgb", type=lambda x: x == "True", default="True", choices=["True", "False"])
     parser.add_argument("--shape", type=int, default=None, nargs='+', help="img_scale: [H x W]")
 

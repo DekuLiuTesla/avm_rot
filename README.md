@@ -18,7 +18,7 @@ pip install mmrotate
 3. 第三步下载配置文件(可选)
 
 ```bash
-mim download mmrotate --config bisenetv2_fcn_4x4_1024x1024_160k_cityscapes --dest .
+mim download mmrotate --config oriented_rcnn_r50_fpn_1x_dota_le90 --dest .
 ```
 
 ## 训练
@@ -78,5 +78,5 @@ avm_cs_format
 ## 推理
 
 ```bash
-python inference.py --config=configs/rotated_retinanet_obb_r50_fpn_1x_avm_le90.py --checkpoint=checkpoints/epoch_3.pth --image_path=demo.jpg 
+python inference.py --config=configs/rotated_retinanet_obb_r50_fpn_1x_avm_le90.py --checkpoint=checkpoints/epoch_3.pth --image_path=demo.png
 ```
