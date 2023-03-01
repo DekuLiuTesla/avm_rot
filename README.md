@@ -67,10 +67,9 @@ avm_cs_format
      │   └─ b2_left_1000.txt
      │       ... 
      └─ images
-         └─ train
-             ├─ b2_left_0.png
-             └─ b2_left_1000.png
-             ... 
+         ├─ b2_left_0.png
+         └─ b2_left_1000.png
+         ... 
  
 ```
 
